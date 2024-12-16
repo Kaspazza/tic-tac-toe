@@ -4,9 +4,9 @@ Tic tac toe web game made in clojure.
 
 This project is part of preparation for teaching the clojure and sharing knowledge.
 
-## Installation
-
-TBD
+At the same time I'm checking-out vscode with Calva instead of emacs.
+:dev aliases is setup to run by just running in calva jack-in (deps.edn + shadow-cljs with alias :dev and :frontend). 
+Adding :frontend will make calva to create and start nrepl.
 
 ## Usage
 

@@ -1,0 +1,9 @@
+{:nrepl {:port 8777}
+ :deps {:aliases [:frontend]}
+ :builds
+ {:frontend
+   {:target :browser
+    :output-dir "resources/public/js/compiled"
+    :asset-path "/js/compiled"
+    :devtools {:watch-dir "public"}
+    :modules {:main {:init-fn kaspazza.main/init}}}}}

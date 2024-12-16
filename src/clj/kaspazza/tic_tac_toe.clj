@@ -9,7 +9,7 @@
             )
   (:gen-class))
 
-(def routes [["*" {:get (fn [_req] {:status 200
+(def routes [["/ping" {:get (fn [_req] {:status 200
                                      :body "Hello World"})}]])
 
 (def router (rring/router routes
@@ -21,7 +21,10 @@
                                                rrc/coerce-response-middleware]}}))
 
 (def handler
-  (rring/ring-handler router))
+  (rring/ring-handler router (rring/routes
+                              (rring/create-resource-handler {:path "/"})
+                              (rring/redirect-trailing-slash-handler)
+                              (rring/create-default-handler))))
 
 (defn -main
   "I don't do a whole lot ... yet."
@@ -31,12 +34,12 @@
 
 (comment
 
+  (+ 1 1)
   (handler {:request-method :get, :uri "/favicon.ico"})
 
   (handler {:request-method :get, :uri "/ping"})
 
   (-main)
-
 
   ;
   )
