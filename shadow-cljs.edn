@@ -5,5 +5,7 @@
    {:target :browser
     :output-dir "resources/public/js/compiled"
     :asset-path "/js/compiled"
-    :devtools {:watch-dir "public"}
+    :devtools {:watch-dir "public"
+               :after-load kaspazza.main/render!
+               :repl-pprint true}
     :modules {:main {:init-fn kaspazza.main/init}}}}}
